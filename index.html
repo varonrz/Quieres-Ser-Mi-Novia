@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>¿Quieres ser mi novia?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #fce4ec;
+    }
+    .btn {
+      padding: 15px 30px;
+      font-size: 18px;
+      margin: 20px;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+    }
+    .yes {
+      background-color: #4caf50;
+      color: white;
+    }
+    .no {
+      background-color: #f44336;
+      color: white;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="inicio">
+    <h1>¿Quieres ser mi novia?</h1>
+    <button class="btn yes" onclick="mostrarSi()">Sí</button>
+    <button class="btn no" onclick="mostrarNo()">No</button>
+  </div>
+
+  <div id="respuestaSi" class="hidden">
+    <h2>¡Genial! Estos son los beneficios de nuestra relación:</h2>
+    <ul style="text-align: left; display: inline-block;">
+      <li>Abrazos infinitos</li>
+      <li>Citas llenas de risas</li>
+      <li>Apoyo incondicional</li>
+      <li>Amor y detalles diarios</li>
+    </ul>
+    <br>
+    <button class="btn yes" onclick="mostrarFinal()">Acepto</button>
+  </div>
+
+  <div id="finalSi" class="hidden">
+    <h2>¡Entonces prepárate para una aventura inolvidable!</h2>
+    <p>Te invito a un glamping mágico en Chocontá para celebrar nuestro comienzo juntos.</p>
+  </div>
+
+  <div id="respuestaNo" class="hidden">
+    <h2>Aun así, déjame contarte los beneficios de estar conmigo:</h2>
+    <ul style="text-align: left; display: inline-block;">
+      <li>Te haré reír incluso en tus días grises</li>
+      <li>Siempre estaré para ti</li>
+      <li>Compartiremos momentos únicos</li>
+      <li>Te haré sentir especial cada día</li>
+    </ul>
+    <br>
+    <p>¿Quieres cambiar tu respuesta a <strong>SÍ</strong>?</p>
+    <button class="btn yes" onclick="mostrarSi()">Sí</button>
+  </div>
+
+  <script>
+    function mostrarSi() {
+      document.getElementById('inicio').classList.add('hidden');
+      document.getElementById('respuestaNo').classList.add('hidden');
+      document.getElementById('respuestaSi').classList.remove('hidden');
+    }
+
+    function mostrarNo() {
+      document.getElementById('inicio').classList.add('hidden');
+      document.getElementById('respuestaSi').classList.add('hidden');
+      document.getElementById('respuestaNo').classList.remove('hidden');
+    }
+
+    function mostrarFinal() {
+      document.getElementById('respuestaSi').classList.add('hidden');
+      document.getElementById('finalSi').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
